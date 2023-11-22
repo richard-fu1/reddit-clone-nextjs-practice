@@ -12,7 +12,14 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react'
-import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore'
+import {
+  collection,
+  getDocs,
+  limit,
+  orderBy,
+  query,
+  where,
+} from 'firebase/firestore'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { FaReddit } from 'react-icons/fa'
@@ -27,6 +34,7 @@ const Recommendations: React.FC = () => {
     try {
       const communityQuery = query(
         collection(firestore, 'communities'),
+        where('privacyType', '==', 'public'),
         orderBy('numberOfMembers', 'desc'),
         limit(5)
       )
