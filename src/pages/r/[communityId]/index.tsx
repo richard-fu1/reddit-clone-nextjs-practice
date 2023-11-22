@@ -3,7 +3,7 @@ import { GetServerSidePropsContext } from 'next'
 import React, { useEffect } from 'react'
 import safeJsonStringify from 'safe-json-stringify'
 import { firestore, verifyUser } from '@/firebase/firebaseAdmin'
-import nookies from 'nookies'
+// import nookies from 'nookies'
 import CommunityNotFound from '@/components/Community/CommunityNotFound'
 import Header from '@/components/Community/Header'
 import PageContent from '@/components/Layout/PageContent'
@@ -49,8 +49,7 @@ const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   try {
-    await verifyUser(nookies.get(context).token)
-
+    // await verifyUser(nookies.get(context).token)
     const communityDoc = await firestore
       .collection('communities')
       .doc(context.query.communityId as string)
