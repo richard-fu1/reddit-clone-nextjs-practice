@@ -2,9 +2,7 @@ import { initializeApp, getApp, getApps, cert } from 'firebase-admin/app'
 import { getAuth } from 'firebase-admin/auth'
 import { getFirestore } from 'firebase-admin/firestore'
 
-const privateKey = process.env['PRIVATE_KEY']
-  ? JSON.parse(process.env['PRIVATE_KEY'])
-  : undefined
+const privateKey = process.env['PRIVATE_KEY'] ?? ''
 const clientEmail = process.env['CLIENT_EMAIL']
 const projectId = process.env['PROJECT_ID']
 
@@ -16,7 +14,7 @@ if (!privateKey || !clientEmail || !projectId) {
 
 const firebaseAdminConfig = {
   credential: cert({
-    privateKey: privateKey,
+    privateKey: privateKey.replace(/\\n/g, '\n'),
     clientEmail,
     projectId,
   }),
