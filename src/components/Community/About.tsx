@@ -21,7 +21,7 @@ import React, { useRef, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { FaReddit } from 'react-icons/fa'
 import { HiOutlineDotsHorizontal } from 'react-icons/hi'
-import { RiCakeLine } from 'react-icons/ri'
+import CakeRoundedIcon from '@mui/icons-material/CakeRounded'
 import { useSetRecoilState } from 'recoil'
 
 type AboutProps = {
@@ -98,7 +98,7 @@ const About: React.FC<AboutProps> = ({ communityData }) => {
           >
             {communityData.createdAt && (
               <>
-                <Icon as={RiCakeLine} fontSize={18} mr={2} />
+                <Icon as={CakeRoundedIcon} fontSize={18} mr={2} />
                 <Text>
                   Created{' '}
                   {moment(communityData.createdAt).format('MMM DD, YYYY')}
