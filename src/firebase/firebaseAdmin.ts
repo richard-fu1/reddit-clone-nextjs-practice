@@ -3,6 +3,8 @@ import { getAuth } from 'firebase-admin/auth'
 import { getFirestore } from 'firebase-admin/firestore'
 
 const privateKey = process.env['PRIVATE_KEY']
+  ? JSON.parse(process.env['PRIVATE_KEY'])
+  : undefined
 const clientEmail = process.env['CLIENT_EMAIL']
 const projectId = process.env['PROJECT_ID']
 
