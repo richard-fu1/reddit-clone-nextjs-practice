@@ -1,8 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Reddit Clone Next JS Practice
+
+This is a Next.js project created by following the help of an online tutorial by freeCodeCamp.org (video seen [here](https://www.youtube.com/watch?v=rCm5RVYKWVg)).
 
 ## Getting Started
 
-First, run the development server:
+To run locally, first create a file `.env.local` with the following fields:
+
+```bash
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+PRIVATE_KEY=
+CLIENT_EMAIL=
+PROJECT_ID=
+```
+
+For any keys with `NEXT_` prefix, add the Firebase SDK credentials, and for the others, add the necessary credentials from a Firebase Admin SDK.
+
+Then, run the development server:
 
 ```bash
 npm run dev
