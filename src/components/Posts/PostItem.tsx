@@ -14,7 +14,7 @@ import moment from 'moment'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
-import { AiOutlineDelete } from 'react-icons/ai'
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined'
 import { BsChat, BsDot } from 'react-icons/bs'
 import { FaReddit } from 'react-icons/fa'
 import {
@@ -119,7 +119,6 @@ const PostItem: React.FC<PostItemProps> = ({
         )}
         <Stack spacing={1} p='10px'>
           <Stack direction='row' spacing={0.6} align='center' fontSize='9pt'>
-            {/* Home Page Check */}
             {homePage && (
               <>
                 {post.communityImageURL ? (
@@ -215,7 +214,7 @@ const PostItem: React.FC<PostItemProps> = ({
                 <Spinner size='sm' />
               ) : (
                 <>
-                  <Icon as={AiOutlineDelete} mr={2} />
+                  <Icon as={DeleteOutlinedIcon} mr={2} />
                   <Text fontSize={'9pt'}>Delete</Text>
                 </>
               )}
