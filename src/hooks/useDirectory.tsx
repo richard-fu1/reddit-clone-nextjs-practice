@@ -6,14 +6,13 @@ import {
 } from '@/atoms/directoryMenuAtom'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
-import { FaReddit } from 'react-icons/fa'
+import { AccountCircleSharp } from '@mui/icons-material'
 import { useRecoilState, useRecoilValue } from 'recoil'
 
 const useDirectory = () => {
   const [directoryState, setDirectoryState] = useRecoilState(directoryMenuState)
   const router = useRouter()
-  const [communityStateValue, setCommunityStateValue] =
-    useRecoilState(communityState)
+  const communityStateValue = useRecoilValue(communityState)
 
   const onSelectMenuItem = (menuItem: DirectoryMenuItem) => {
     setDirectoryState((prev) => ({
@@ -37,7 +36,7 @@ const useDirectory = () => {
           displayText: `r/${currentCommunity.id}`,
           link: `/r/${currentCommunity.id}`,
           imageURL: currentCommunity.imageURL,
-          icon: FaReddit,
+          icon: AccountCircleSharp,
           iconColor: 'blue.500',
         },
       }))

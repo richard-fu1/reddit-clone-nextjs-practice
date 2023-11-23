@@ -10,11 +10,10 @@ import {
   MenuList,
   Text,
 } from '@chakra-ui/react'
-import { TiHome } from 'react-icons/ti'
 import Communities from './Communities'
 import useDirectory from '@/hooks/useDirectory'
 
-const UserMenu: React.FC = () => {
+const Directory: React.FC = () => {
   const { directoryState, toggleMenuOpen } = useDirectory()
   return (
     <Menu isOpen={directoryState.isOpen}>
@@ -64,4 +63,4 @@ const UserMenu: React.FC = () => {
     </Menu>
   )
 }
-export default UserMenu
+export default Directory

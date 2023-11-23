@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { GrAdd } from 'react-icons/gr'
 import { useRecoilValue } from 'recoil'
 import MenuListItem from './MenuListItem'
-import { FaReddit } from 'react-icons/fa'
+import { AccountCircleSharp } from '@mui/icons-material'
 
 type CommunitiesProps = {}
 
@@ -31,7 +31,7 @@ const Communities: React.FC<CommunitiesProps> = () => {
           .map((snippet) => (
             <MenuListItem
               key={snippet.communityId}
-              icon={FaReddit}
+              icon={AccountCircleSharp}
               displayText={`r/${snippet.communityId}`}
               link={`/r/${snippet.communityId}`}
               iconColor='brand.100'
@@ -63,7 +63,7 @@ const Communities: React.FC<CommunitiesProps> = () => {
         {mySnippets.map((snippet) => (
           <MenuListItem
             key={snippet.communityId}
-            icon={FaReddit}
+            icon={AccountCircleSharp}
             displayText={`r/${snippet.communityId}`}
             link={`/r/${snippet.communityId}`}
             iconColor='blue.500'

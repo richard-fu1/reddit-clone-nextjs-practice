@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Flex, Icon, Stack, Text } from '@chakra-ui/react'
-import { FaReddit } from 'react-icons/fa'
+import { AccountCircleSharp } from '@mui/icons-material'
 
 const PersonalHome: React.FC = () => {
   return (
@@ -26,7 +26,12 @@ const PersonalHome: React.FC = () => {
       ></Flex>
       <Flex direction='column' p='12px'>
         <Flex align='center' mb={2}>
-          <Icon as={FaReddit} fontSize={50} color='brand.100' mr={2} />
+          <Icon
+            as={AccountCircleSharp}
+            fontSize={50}
+            color='brand.100'
+            mr={2}
+          />
           <Text fontWeight={600}>Home</Text>
         </Flex>
         <Stack spacing={3}>

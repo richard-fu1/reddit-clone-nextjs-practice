@@ -22,7 +22,7 @@ import {
 } from 'firebase/firestore'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { FaReddit } from 'react-icons/fa'
+import { AccountCircleSharp } from '@mui/icons-material'
 
 const Recommendations: React.FC = () => {
   const [communities, setCommunities] = useState<Community[]>([])
@@ -123,7 +123,7 @@ const Recommendations: React.FC = () => {
                           />
                         ) : (
                           <Icon
-                            as={FaReddit}
+                            as={AccountCircleSharp}
                             fontSize={30}
                             color='brand.100'
                             mr={2}

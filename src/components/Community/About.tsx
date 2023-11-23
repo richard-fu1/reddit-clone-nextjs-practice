@@ -16,10 +16,9 @@ import { doc, updateDoc } from 'firebase/firestore'
 import { getDownloadURL, ref, uploadString } from 'firebase/storage'
 import moment from 'moment'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import React, { useRef, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { FaReddit } from 'react-icons/fa'
+import { AccountCircleSharp } from '@mui/icons-material'
 import { HiOutlineDotsHorizontal } from 'react-icons/hi'
 import CakeRoundedIcon from '@mui/icons-material/CakeRounded'
 import { useSetRecoilState } from 'recoil'
@@ -137,7 +136,7 @@ const About: React.FC<AboutProps> = ({ communityData }) => {
                     />
                   ) : (
                     <Icon
-                      as={FaReddit}
+                      as={AccountCircleSharp}
                       fontSize={40}
                       color='brand.100'
                       mr={2}

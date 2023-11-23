@@ -1,12 +1,12 @@
 import useDirectory from '@/hooks/useDirectory'
 import { Flex, Icon, Image, MenuItem } from '@chakra-ui/react'
+import { SvgIconComponent } from '@mui/icons-material'
 import React from 'react'
-import { IconType } from 'react-icons'
 
 type MenuListItemProps = {
   displayText: string
   link: string
-  icon: IconType
+  icon: SvgIconComponent
   iconColor: string
   imageURL?: string
 }

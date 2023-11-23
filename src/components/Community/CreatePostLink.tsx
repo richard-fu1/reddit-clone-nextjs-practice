@@ -2,7 +2,7 @@ import { Flex, Icon, Input } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { BsLink45Deg } from 'react-icons/bs'
-import { FaReddit } from 'react-icons/fa'
+import { AccountCircleSharp } from '@mui/icons-material'
 import { IoImageOutline } from 'react-icons/io5'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '@/firebase/clientApp'
@@ -42,7 +42,7 @@ const CreatePostLink: React.FC<CreatePostProps> = () => {
       p={2}
       mb={4}
     >
-      <Icon as={FaReddit} fontSize={36} color='gray.300' mr={4} />
+      <Icon as={AccountCircleSharp} fontSize={36} color='gray.300' mr={4} />
       <Input
         placeholder='Create Post'
         fontSize='10pt'

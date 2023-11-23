@@ -13,7 +13,6 @@ import { communityState } from '@/atoms/communitiesAtom'
 const Navbar: React.FC = () => {
   const [user, loading, error] = useAuthState(auth)
   const { onSelectMenuItem } = useDirectory()
-  const setCommunityStateValue = useSetRecoilState(communityState)
   return (
     <Flex bg='white' height='44px' padding='6px 12px' justify={'space-between'}>
       <Flex
@@ -23,10 +22,6 @@ const Navbar: React.FC = () => {
         cursor='pointer'
         onClick={async () => {
           onSelectMenuItem(defaultMenuItem)
-          // setCommunityStateValue((prev) => ({
-          //   ...prev,
-          //   currentCommunity: undefined,
-          // }))
         }}
       >
         <Image src='/images/redditFace.svg' height='30px' />

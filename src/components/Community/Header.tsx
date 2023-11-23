@@ -1,7 +1,7 @@
 import { Community } from '@/atoms/communitiesAtom'
 import { Box, Button, Flex, Icon, Image, Text } from '@chakra-ui/react'
 import React from 'react'
-import { FaReddit } from 'react-icons/fa'
+import { AccountCircleSharp } from '@mui/icons-material'
 import useCommunityData from '@/hooks/useCommunityData'
 
 type HeaderProps = {
@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ communityData }) => {
             />
           ) : (
             <Icon
-              as={FaReddit}
+              as={AccountCircleSharp}
               fontSize={64}
               position='relative'
               top={-3}
