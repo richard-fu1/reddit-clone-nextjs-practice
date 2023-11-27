@@ -50,12 +50,14 @@ const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   try {
     // await verifyUser(nookies.get(context).token)
+    console.log('test1')
     console.time('firestoreTime')
     const communityDoc = await firestore
       .collection('communities')
       .doc(context.query.communityId as string)
       .get()
     console.timeEnd('firestoreTime')
+    console.log('test2')
     const data = communityDoc.exists ? communityDoc.data() : null
     return {
       props: {
