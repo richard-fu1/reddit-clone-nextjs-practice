@@ -6,7 +6,7 @@ import {
 } from '@/atoms/directoryMenuAtom'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
-import { AccountCircleSharp } from '@mui/icons-material'
+import { MdAccountCircle } from 'react-icons/md'
 import { useRecoilState, useRecoilValue } from 'recoil'
 
 const useDirectory = () => {
@@ -36,7 +36,7 @@ const useDirectory = () => {
           displayText: `r/${currentCommunity.id}`,
           link: `/r/${currentCommunity.id}`,
           imageURL: currentCommunity.imageURL,
-          icon: AccountCircleSharp,
+          icon: MdAccountCircle,
           iconColor: 'blue.500',
         },
       }))

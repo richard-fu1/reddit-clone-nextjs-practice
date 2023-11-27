@@ -14,18 +14,17 @@ import moment from 'moment'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
+import { AiOutlineDelete } from 'react-icons/ai'
+import { BsChat, BsDot } from 'react-icons/bs'
+import { MdAccountBox } from 'react-icons/md'
 import {
-  DeleteOutlined,
-  ChatBubbleOutlineOutlined,
-  BookmarkBorderOutlined,
-  FiberManualRecord,
-  ReplyOutlined,
-  AccountCircleSharp,
-  ArrowCircleUpOutlined,
-  ArrowCircleDownOutlined,
-  ArrowCircleUpSharp,
-  ArrowCircleDownSharp,
-} from '@mui/icons-material'
+  IoArrowDownCircleOutline,
+  IoArrowDownCircleSharp,
+  IoArrowRedoOutline,
+  IoArrowUpCircleOutline,
+  IoArrowUpCircleSharp,
+  IoBookmarkOutline,
+} from 'react-icons/io5'
 
 type PostItemProps = {
   post: Post
@@ -92,7 +91,9 @@ const PostItem: React.FC<PostItemProps> = ({
         borderRadius={singlePostPage ? '0' : '3px 0px 0px 3px'}
       >
         <Icon
-          as={userVoteValue === 1 ? ArrowCircleUpSharp : ArrowCircleUpOutlined}
+          as={
+            userVoteValue === 1 ? IoArrowUpCircleSharp : IoArrowUpCircleOutline
+          }
           color={userVoteValue === 1 ? 'brand.100' : 'gray.400'}
           onClick={(event) => onVote(event, post, 1, post.communityId)}
           cursor='pointer'
@@ -101,8 +102,8 @@ const PostItem: React.FC<PostItemProps> = ({
         <Icon
           as={
             userVoteValue === -1
-              ? ArrowCircleDownSharp
-              : ArrowCircleDownOutlined
+              ? IoArrowDownCircleSharp
+              : IoArrowDownCircleOutline
           }
           color={userVoteValue === -1 ? '#4379ff' : 'gray.400'}
           onClick={(event) => onVote(event, post, -1, post.communityId)}
@@ -129,7 +130,7 @@ const PostItem: React.FC<PostItemProps> = ({
                   />
                 ) : (
                   <Icon
-                    as={AccountCircleSharp}
+                    as={MdAccountBox}
                     fontSize={'18pt'}
                     mr={1}
                     color='blue.500'
@@ -142,13 +143,7 @@ const PostItem: React.FC<PostItemProps> = ({
                     onClick={(event) => event.stopPropagation()}
                   >{`r/${post.communityId}`}</Text>
                 </Link>
-                <Icon
-                  as={FiberManualRecord}
-                  color='gray.500'
-                  fontSize={4}
-                  ml={0.5}
-                  mr={0.5}
-                />
+                <Icon as={BsDot} color='gray.500' fontSize={4} />
               </>
             )}
             <Text>
@@ -183,7 +178,7 @@ const PostItem: React.FC<PostItemProps> = ({
             _hover={{ bg: 'gray.200' }}
             cursor={'pointer'}
           >
-            <Icon as={ChatBubbleOutlineOutlined} mr={2} />
+            <Icon as={BsChat} mr={2} />
             <Text fontSize={'9pt'}>{post.numberOfComments}</Text>
           </Flex>
           <Flex
@@ -193,7 +188,7 @@ const PostItem: React.FC<PostItemProps> = ({
             _hover={{ bg: 'gray.200' }}
             cursor={'pointer'}
           >
-            <Icon as={ReplyOutlined} mr={2} />
+            <Icon as={IoArrowRedoOutline} mr={2} />
             <Text fontSize={'9pt'}>Share</Text>
           </Flex>
           <Flex
@@ -203,7 +198,7 @@ const PostItem: React.FC<PostItemProps> = ({
             _hover={{ bg: 'gray.200' }}
             cursor={'pointer'}
           >
-            <Icon as={BookmarkBorderOutlined} mr={2} />
+            <Icon as={IoBookmarkOutline} mr={2} />
             <Text fontSize={'9pt'}>Save</Text>
           </Flex>
           {userIsCreator && (
@@ -219,7 +214,7 @@ const PostItem: React.FC<PostItemProps> = ({
                 <Spinner size='sm' />
               ) : (
                 <>
-                  <Icon as={DeleteOutlined} mr={2} />
+                  <Icon as={AiOutlineDelete} mr={2} />
                   <Text fontSize={'9pt'}>Delete</Text>
                 </>
               )}

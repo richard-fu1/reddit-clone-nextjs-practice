@@ -18,9 +18,8 @@ import moment from 'moment'
 import Link from 'next/link'
 import React, { useRef, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { AccountCircleSharp } from '@mui/icons-material'
-import { HiOutlineDotsHorizontal } from 'react-icons/hi'
-import CakeRoundedIcon from '@mui/icons-material/CakeRounded'
+import { MdAccountCircle } from 'react-icons/md'
+import { HiOutlineDotsHorizontal, HiOutlineCake } from 'react-icons/hi'
 import { useSetRecoilState } from 'recoil'
 
 type AboutProps = {
@@ -97,7 +96,7 @@ const About: React.FC<AboutProps> = ({ communityData }) => {
           >
             {communityData.createdAt && (
               <>
-                <Icon as={CakeRoundedIcon} fontSize={18} mr={2} />
+                <Icon as={HiOutlineCake} fontSize={18} mr={2} />
                 <Text>
                   Created{' '}
                   {moment(communityData.createdAt).format('MMM DD, YYYY')}
@@ -136,7 +135,7 @@ const About: React.FC<AboutProps> = ({ communityData }) => {
                     />
                   ) : (
                     <Icon
-                      as={AccountCircleSharp}
+                      as={MdAccountCircle}
                       fontSize={40}
                       color='brand.100'
                       mr={2}

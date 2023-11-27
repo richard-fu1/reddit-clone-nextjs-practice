@@ -1,7 +1,7 @@
 import { Box, Flex, Icon, Spinner, Stack, Text } from '@chakra-ui/react'
 import moment from 'moment'
 import React from 'react'
-import { AccountCircleSharp } from '@mui/icons-material'
+import { MdAccountCircle } from 'react-icons/md'
 import {
   IoArrowDownCircleOutline,
   IoArrowUpCircleOutline,
@@ -34,7 +34,7 @@ const CommentItem: React.FC<CommentItemProps> = ({
   return (
     <Flex>
       <Box mr={2}>
-        <Icon as={AccountCircleSharp} fontSize={30} color='gray.300' />
+        <Icon as={MdAccountCircle} fontSize={30} color='gray.300' />
       </Box>
       <Stack spacing={1}>
         <Stack direction='row' align='center' spacing={2} fontSize='8pt'>

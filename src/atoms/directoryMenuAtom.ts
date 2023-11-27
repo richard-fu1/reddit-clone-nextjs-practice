@@ -1,11 +1,11 @@
-import { SvgIconComponent } from '@mui/icons-material'
+import { IconType } from 'react-icons'
 import { TiHome } from 'react-icons/ti'
 import { atom } from 'recoil'
 
 export type DirectoryMenuItem = {
   displayText: string
   link: string
-  icon: SvgIconComponent
+  icon: IconType
   iconColor: string
   imageURL?: string
 }

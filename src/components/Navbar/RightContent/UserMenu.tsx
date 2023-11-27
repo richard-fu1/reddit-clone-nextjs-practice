@@ -13,7 +13,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { User, signOut } from 'firebase/auth'
-import { FaRedditSquare } from 'react-icons/fa'
+import { MdAccountBox } from 'react-icons/md'
 import { VscAccount } from 'react-icons/vsc'
 import { IoSparkles } from 'react-icons/io5'
 import { CgProfile } from 'react-icons/cg'
@@ -45,7 +45,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ user }) => {
             {user ? (
               <>
                 <Icon
-                  as={FaRedditSquare}
+                  as={MdAccountBox}
                   fontSize={24}
                   mr={1}
                   color={'gray.300'}
