@@ -16,7 +16,7 @@ import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { AiOutlineDelete } from 'react-icons/ai'
 import { BsChat, BsDot } from 'react-icons/bs'
-import { MdAccountBox } from 'react-icons/md'
+import { MdAccountCircle } from 'react-icons/md'
 import {
   IoArrowDownCircleOutline,
   IoArrowDownCircleSharp,
@@ -130,7 +130,7 @@ const PostItem: React.FC<PostItemProps> = ({
                   />
                 ) : (
                   <Icon
-                    as={MdAccountBox}
+                    as={MdAccountCircle}
                     fontSize={'18pt'}
                     mr={1}
                     color='blue.500'
